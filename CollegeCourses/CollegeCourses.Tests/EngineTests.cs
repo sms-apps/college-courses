@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ninject;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CollegeCourses.Tests
 {
@@ -32,6 +33,8 @@ namespace CollegeCourses.Tests
         {
             var result = _collegeCoursesEngine.DetermineClassOrder(new List<string>());
             Assert.IsNotNull(result);
+
+            Assert.IsTrue(result.Any());
         }
     }
 }
