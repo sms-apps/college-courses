@@ -8,5 +8,9 @@ namespace CollegeCourses.Business
 {
     public class Engine : IEngine
     {
+        public IEnumerable<string> DetermineClassOrder(IEnumerable<string> classes)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

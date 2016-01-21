@@ -1,27 +1,33 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CollegeCourses.Business;
+using System.Collections.Generic;
 
 namespace CollegeCourses.Tests
 {
     [TestClass]
     public class EngineTests
     {
-        Engine _collegeCoursesEngine;
+        private static IEngine _collegeCoursesEngine;
 
-        [TestInitialize]
-        public void TestInitialize()
+        [ClassInitialize]
+        public static void TestInitialize(TestContext testContext)
         {
             _collegeCoursesEngine = new Engine();
         }
 
         [TestMethod]
-        public void EngineIsValid()
+        public void EngineIsValidTest()
         {
             Assert.IsNotNull(_collegeCoursesEngine);
             Assert.IsInstanceOfType(_collegeCoursesEngine, typeof(Engine));
         }
 
+        [TestMethod]
+        public void DetermineClassOrderTest()
+        {
+            _collegeCoursesEngine.DetermineClassOrder(new List<string>());
+        }
 
     }
 }
