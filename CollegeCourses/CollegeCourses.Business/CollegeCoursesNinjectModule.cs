@@ -7,6 +7,7 @@ namespace CollegeCourses.Business
         public override void Load()
         {
             Bind<IEngine>().To<Engine>();
+            Bind<IMapper>().To<Mapper>();
         }
     }
 }

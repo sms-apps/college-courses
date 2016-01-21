@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeCourses.Tests", "Col
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeCourses.Business", "CollegeCourses.Business\CollegeCourses.Business.csproj", "{7CF2E532-E76D-4879-A5A0-F3E188A1D3AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeCourses.Models", "CollegeCourses.Models\CollegeCourses.Models.csproj", "{0AE559AC-E0F0-4873-B29E-793E9567A6E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7CF2E532-E76D-4879-A5A0-F3E188A1D3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CF2E532-E76D-4879-A5A0-F3E188A1D3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CF2E532-E76D-4879-A5A0-F3E188A1D3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE559AC-E0F0-4873-B29E-793E9567A6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE559AC-E0F0-4873-B29E-793E9567A6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE559AC-E0F0-4873-B29E-793E9567A6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE559AC-E0F0-4873-B29E-793E9567A6E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

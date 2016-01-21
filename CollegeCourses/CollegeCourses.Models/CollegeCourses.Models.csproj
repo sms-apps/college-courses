@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7CF2E532-E76D-4879-A5A0-F3E188A1D3AD}</ProjectGuid>
+    <ProjectGuid>{0AE559AC-E0F0-4873-B29E-793E9567A6E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CollegeCourses.Business</RootNamespace>
-    <AssemblyName>CollegeCourses.Business</AssemblyName>
+    <RootNamespace>CollegeCourses.Models</RootNamespace>
+    <AssemblyName>CollegeCourses.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,21 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollegeCoursesNinjectModule.cs" />
-    <Compile Include="Engine.cs" />
-    <Compile Include="IEngine.cs" />
-    <Compile Include="IMapper.cs" />
-    <Compile Include="Mapper.cs" />
+    <Compile Include="Course.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CollegeCourses.Models\CollegeCourses.Models.csproj">
-      <Project>{0ae559ac-e0f0-4873-b29e-793e9567a6e3}</Project>
-      <Name>CollegeCourses.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
