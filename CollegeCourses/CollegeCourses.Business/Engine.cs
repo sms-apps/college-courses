@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CollegeCourses.Business
 {
@@ -16,6 +17,10 @@ namespace CollegeCourses.Business
             var result = new List<string>();
 
             var courses = _mapper.ToCourses(classes);
+            result.AddRange(courses
+                .Where(c => string.IsNullOrWhiteSpace(c.PrerequisiteTitle))
+                .Select(f => f.Title)
+            );
 
             return result;
         }
