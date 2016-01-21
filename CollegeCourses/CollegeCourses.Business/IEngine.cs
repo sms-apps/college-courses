@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CollegeCourses.Business
 {
-    public class Engine : IEngine
+    public interface IEngine
     {
     }
 }
