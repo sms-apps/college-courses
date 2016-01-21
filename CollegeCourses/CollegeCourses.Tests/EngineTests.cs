@@ -16,8 +16,12 @@ namespace CollegeCourses.Tests
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void EngineIsValid()
         {
+            Assert.IsNotNull(_collegeCoursesEngine);
+            Assert.IsInstanceOfType(_collegeCoursesEngine, typeof(Engine));
         }
+
+
     }
 }
