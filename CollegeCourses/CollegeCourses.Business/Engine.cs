@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using CollegeCourses.Models;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CollegeCourses.Business
@@ -16,11 +18,33 @@ namespace CollegeCourses.Business
         {
             var result = new List<string>();
 
-            var courses = _mapper.ToCourses(classes);
-            result.AddRange(courses
-                .Where(c => string.IsNullOrWhiteSpace(c.PrerequisiteTitle))
-                .Select(f => f.Title)
-            );
+            var coursesList = _mapper.ToCourses(classes);
+            var coursesWithNoPrerequisite = coursesList.Where(c => string.IsNullOrWhiteSpace(c.PrerequisiteTitle));
+            var coursesWithPrerequisites = coursesList.Where(c => !string.IsNullOrWhiteSpace(c.PrerequisiteTitle));
+            var prerequisiteTitles = coursesList.Select(f => f.PrerequisiteTitle).Distinct();
+
+            if (!coursesWithNoPrerequisite.Any())
+            {
+                throw new ApplicationException("Must have at least one course with no prerequisites!");
+            }
+
+            result.AddRange(coursesWithNoPrerequisite.Select(f => f.Title));
+            foreach (var baseCourse in coursesWithNoPrerequisite.Select(f => f.Title))
+            {
+                result.AddRange(GetAllCoursesWithAPrerequisiteOf(coursesList, baseCourse));
+            }
+            return result;
+        }
+
+        private IEnumerable<string> GetAllCoursesWithAPrerequisiteOf(IEnumerable<Course> coursesList, string baseCourse)
+        {
+            var result = new List<string>();
+
+            foreach (var course in coursesList.Where(f => f.PrerequisiteTitle.Equals(baseCourse)))
+            {
+                result.Add(course.Title);
+                result.AddRange(GetAllCoursesWithAPrerequisiteOf(coursesList, course.Title));
+            }
 
             return result;
         }
