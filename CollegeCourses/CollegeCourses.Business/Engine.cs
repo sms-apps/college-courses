@@ -20,8 +20,6 @@ namespace CollegeCourses.Business
 
             var coursesList = _mapper.ToCourses(classes);
             var coursesWithNoPrerequisite = coursesList.Where(c => string.IsNullOrWhiteSpace(c.PrerequisiteTitle));
-            var coursesWithPrerequisites = coursesList.Where(c => !string.IsNullOrWhiteSpace(c.PrerequisiteTitle));
-            var prerequisiteTitles = coursesList.Select(f => f.PrerequisiteTitle).Distinct();
 
             if (!coursesWithNoPrerequisite.Any())
             {
