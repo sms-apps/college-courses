@@ -36,6 +36,7 @@ namespace CollegeCourses.Business
 
         private IEnumerable<string> GetAllCoursesWithAPrerequisiteOf(IEnumerable<Course> coursesList, string baseCourse)
         {
+            // TODO - this needs to be public and testable.
             var result = new List<string>();
 
             foreach (var course in coursesList.Where(f => f.PrerequisiteTitle.Equals(baseCourse)))
